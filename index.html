@@ -65,7 +65,7 @@
     </div>
   </div>
 
-  <script>
+    <script>
     const snow = document.getElementById('snow');
     const ctx = snow.getContext('2d');
     let width = window.innerWidth;
@@ -75,13 +75,15 @@
     snow.width = width;
     snow.height = height;
 
-    for (let i = 0; i < 100; i++) {
-      snowflakes.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 4 + 1,
-        d: Math.random() * 1 + 1
-      });
+    function createSnowflakes() {
+      for (let i = 0; i < 100; i++) {
+        snowflakes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: Math.random() * 4 + 1,
+          d: Math.random() * 1 + 1
+        });
+      }
     }
 
     function drawSnowflakes() {
